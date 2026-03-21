@@ -1,0 +1,52 @@
+<div class="projects-app">
+  <h2 class="ub-section-title">My Projects</h2>
+
+  <div class="projects-list">
+    @for (p of projects; track p.title) {
+      <div class="project-card">
+        @if (p.screenshots?.length) {
+          <div class="card-shots">
+            @for (s of p.screenshots!; track s) {
+              <img [src]="s" [alt]="p.title" class="shot-thumb"
+                   (click)="lightbox.set({src:s, title:p.title})"
+                   onerror="this.style.display='none'" />
+            }
+          </div>
+        }
+        <div class="card-content">
+          <div class="card-top">
+            <h3 class="card-title">{{ p.title }}</h3>
+            @if (p.link) {
+              <a [href]="p.link" target="_blank" class="card-link">
+                Visit ↗
+              </a>
+            }
+          </div>
+          <p class="card-desc">{{ p.description }}</p>
+          <div class="card-tech">
+            @for (t of p.techStack; track t) {
+              <div class="tech-tag" [title]="t">
+                <img [src]="logo(t)" [alt]="t" class="tech-logo"
+                     onerror="this.style.display='none'" />
+                {{ t }}
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Lightbox -->
+  @if (lightbox()) {
+    <div class="lightbox" (click)="lightbox.set(null)">
+      <div class="lb-box" (click)="$event.stopPropagation()">
+        <div class="lb-bar">
+          <span>{{ lightbox()!.title }}</span>
+          <button (click)="lightbox.set(null)">✕</button>
+        </div>
+        <img [src]="lightbox()!.src" class="lb-img" />
+      </div>
+    </div>
+  }
+</div>

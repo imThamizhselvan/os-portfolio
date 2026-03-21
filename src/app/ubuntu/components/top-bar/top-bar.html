@@ -1,0 +1,51 @@
+<div class="top-bar">
+  <!-- Left: Activities + focused app name -->
+  <div class="tb-left">
+    <button class="tb-activities">Activities</button>
+    @if (activeTitle()) {
+      <span class="tb-app-name">{{ activeTitle() }}</span>
+    }
+  </div>
+
+  <!-- Center: Clock -->
+  <div class="tb-center">
+    <span class="tb-time">{{ timeStr() }}</span>
+    <span class="tb-date">{{ dateStr() }}</span>
+  </div>
+
+  <!-- Right: System tray -->
+  <div class="tb-right">
+    <!-- Sound toggle -->
+    <button class="tb-tray-btn" (click)="sound.toggle()" [title]="sound.enabled() ? 'Mute' : 'Unmute'">
+      <span>{{ sound.enabled() ? '🔊' : '🔇' }}</span>
+    </button>
+
+    <!-- WiFi (decorative) -->
+    <button class="tb-tray-btn" title="Network">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M1 9l2 2c5-5 13-5 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.24 4.24 0 00-6 0zm-4-4l2 2a7 7 0 0110 0l2-2C15.14 9.14 8.87 9.14 5 13z"/>
+      </svg>
+    </button>
+
+    <!-- Battery (decorative) -->
+    <button class="tb-tray-btn" title="Battery">
+      <svg width="16" height="10" viewBox="0 0 16 10" fill="currentColor">
+        <rect x="0" y="1" width="13" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+        <rect x="1" y="2" width="9" height="6" rx="0.5" fill="#61c554"/>
+        <rect x="14" y="3" width="2" height="4" rx="1" fill="currentColor"/>
+      </svg>
+    </button>
+
+    <!-- Power menu -->
+    <div class="tb-power-wrap">
+      <button class="tb-tray-btn tb-power-btn" (click)="togglePowerMenu($event)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42A6.92 6.92 0 0119 12c0 3.87-3.13 7-7 7A7 7 0 015 12c0-1.68.59-3.22 1.58-4.42L5.17 6.17A8.932 8.932 0 003 12a9 9 0 009 9 9 9 0 009-9c0-2.74-1.23-5.18-3.17-6.83z"/>
+        </svg>
+      </button>
+      @if (powerOpen()) {
+        <app-power-menu (close)="closePowerMenu()" />
+      }
+    </div>
+  </div>
+</div>

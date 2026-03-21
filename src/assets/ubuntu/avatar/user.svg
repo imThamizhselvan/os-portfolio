@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f47421"/>
+      <stop offset="100%" stop-color="#c9330a"/>
+    </linearGradient>
+    <clipPath id="circle"><circle cx="100" cy="100" r="100"/></clipPath>
+  </defs>
+  <circle cx="100" cy="100" r="100" fill="url(#bg)"/>
+  <!-- Person silhouette -->
+  <circle cx="100" cy="72" r="32" fill="rgba(255,255,255,0.9)"/>
+  <path d="M20 185 Q20 130 100 130 Q180 130 180 185 L200 200 L0 200 Z" fill="rgba(255,255,255,0.9)"/>
+</svg>

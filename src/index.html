@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Thamil Selvan — Windows XP Portfolio</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Thamil Selvan's portfolio — Windows XP desktop experience">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <!-- Mobile overlay -->
+  <div id="mobile-overlay" style="
+    display: none;
+    position: fixed; inset: 0; z-index: 999999;
+    background: #000; color: #fff;
+    font-family: Tahoma, sans-serif; font-size: 14px;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 24px;
+    flex-direction: column; gap: 16px;
+  ">
+    <div style="font-size: 48px">🖥️</div>
+    <div style="font-size: 18px; font-weight: bold">Best viewed on Desktop</div>
+    <div style="color: #aaa; max-width: 300px">This Windows XP experience requires a large screen. Please open on a desktop or laptop browser.</div>
+  </div>
+
+  <script>
+    if (window.innerWidth < 768) {
+      document.getElementById('mobile-overlay').style.display = 'flex';
+    }
+  </script>
+
+  <app-root></app-root>
+</body>
+</html>

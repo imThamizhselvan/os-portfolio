@@ -1,0 +1,7 @@
+.desktop {
+  position: fixed; inset: 0;
+  overflow: hidden;
+  animation: ub-fade-in 0.4s ease forwards;
+  background-attachment: fixed;
+  transition: background 0.6s ease;
+}

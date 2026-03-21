@@ -1,0 +1,47 @@
+<div class="blog-app">
+  @if (!selected()) {
+    <!-- List -->
+    <h2 class="ub-section-title">Blog</h2>
+
+    @if (loading()) {
+      <div class="loading">Loading articles…</div>
+    } @else if (!articles().length) {
+      <div class="empty">No articles yet — check back soon!</div>
+    } @else {
+      <div class="article-list">
+        @for (a of articles(); track a.id) {
+          <div class="article-card" (click)="selected.set(a)">
+            <div class="ac-header">
+              <h3 class="ac-title">{{ a.title }}</h3>
+              <span class="ac-rt">{{ a.readTime }} min</span>
+            </div>
+            <p class="ac-excerpt">{{ a.excerpt }}</p>
+            <div class="ac-footer">
+              <div class="ac-tags">
+                @for (t of a.tags; track t) { <span class="tag">{{ t }}</span> }
+              </div>
+              <span class="ac-date">{{ a.date | date:'MMM d, y' }}</span>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  } @else {
+    <!-- Article -->
+    <button class="back-btn" (click)="selected.set(null)">← Back</button>
+    <article class="article-full">
+      <h1 class="af-title">{{ selected()!.title }}</h1>
+      <div class="af-meta">
+        <span>{{ selected()!.author }}</span>
+        <span>·</span>
+        <span>{{ selected()!.date | date:'MMMM d, y' }}</span>
+        <span>·</span>
+        <span>{{ selected()!.readTime }} min read</span>
+      </div>
+      <div class="af-tags">
+        @for (t of selected()!.tags; track t) { <span class="tag">{{ t }}</span> }
+      </div>
+      <div class="af-body">{{ selected()!.content }}</div>
+    </article>
+  }
+</div>

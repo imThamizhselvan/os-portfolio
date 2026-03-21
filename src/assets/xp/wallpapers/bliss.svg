@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6ab4f5"/>
+      <stop offset="60%" stop-color="#a8d4f8"/>
+      <stop offset="100%" stop-color="#c8e4ff"/>
+    </linearGradient>
+    <linearGradient id="hillGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4caf50"/>
+      <stop offset="40%" stop-color="#388e3c"/>
+      <stop offset="100%" stop-color="#1b5e20"/>
+    </linearGradient>
+  </defs>
+  <!-- Sky -->
+  <rect width="1920" height="1080" fill="url(#skyGrad)"/>
+  <!-- Hills -->
+  <ellipse cx="960" cy="850" rx="1200" ry="400" fill="url(#hillGrad)"/>
+  <ellipse cx="200" cy="950" rx="600" ry="300" fill="#2e7d32"/>
+  <ellipse cx="1700" cy="950" rx="600" ry="300" fill="#2e7d32"/>
+  <!-- Clouds -->
+  <ellipse cx="300" cy="250" rx="150" ry="60" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="400" cy="230" rx="120" ry="50" fill="rgba(255,255,255,0.9)"/>
+  <ellipse cx="200" cy="260" rx="100" ry="45" fill="rgba(255,255,255,0.8)"/>
+  <ellipse cx="1500" cy="180" rx="180" ry="65" fill="rgba(255,255,255,0.85)"/>
+  <ellipse cx="1620" cy="160" rx="130" ry="55" fill="rgba(255,255,255,0.9)"/>
+  <ellipse cx="1400" cy="200" rx="110" ry="48" fill="rgba(255,255,255,0.8)"/>
+  <ellipse cx="800" cy="300" rx="100" ry="40" fill="rgba(255,255,255,0.75)"/>
+  <ellipse cx="870" cy="285" rx="90" ry="38" fill="rgba(255,255,255,0.8)"/>
+</svg>

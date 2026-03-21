@@ -1,0 +1,69 @@
+.titlebar {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 10px;
+  background: var(--ub-win-titlebar-unfocused);
+  border-radius: 12px 12px 0 0;
+  cursor: move;
+  user-select: none;
+  flex-shrink: 0;
+  transition: background 0.15s;
+
+  &.focused { background: var(--ub-win-titlebar); }
+}
+
+.tb-buttons {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  width: 68px;
+}
+
+.tb-btn {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0;
+  transition: filter 0.1s;
+  position: relative;
+
+  .tb-icon {
+    font-size: 8px;
+    opacity: 0;
+    position: absolute;
+    font-weight: 900;
+    pointer-events: none;
+    color: rgba(0,0,0,0.6);
+    line-height: 1;
+  }
+
+  &:hover .tb-icon { opacity: 1; }
+  &:hover { filter: brightness(0.85); }
+  &:active { filter: brightness(0.7); }
+
+  &.tb-close { background: var(--ub-btn-close); }
+  &.tb-min   { background: var(--ub-btn-min); }
+  &.tb-max   { background: var(--ub-btn-max); }
+}
+
+.titlebar:not(.focused) .tb-btn {
+  background: #6c6c6c !important;
+}
+
+.tb-title {
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  .titlebar:not(.focused) & { color: rgba(255,255,255,0.5); }
+}
+
+.tb-spacer { width: 68px; }

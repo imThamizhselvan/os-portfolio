@@ -1,0 +1,55 @@
+<div class="contact-app">
+  <!-- Info -->
+  <div class="contact-info">
+    <h2 class="ub-section-title">Get in Touch</h2>
+    <div class="info-list">
+      <a href="mailto:hello@imthamil.com" class="info-row">
+        <span class="info-ico">✉</span>
+        <span>hello&#64;imthamil.com</span>
+      </a>
+      <a href="https://imthamil.com" target="_blank" class="info-row">
+        <span class="info-ico">🌐</span>
+        <span>imthamil.com</span>
+      </a>
+      <a href="https://github.com/tronictio" target="_blank" class="info-row">
+        <span class="info-ico">🐙</span>
+        <span>github.com/tronictio</span>
+      </a>
+      <a href="https://linkedin.com/in/thamil" target="_blank" class="info-row">
+        <span class="info-ico">🔗</span>
+        <span>LinkedIn</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Form -->
+  <form class="contact-form" (submit)="submit($event)">
+    <h3 class="form-heading">Send a Message</h3>
+
+    @if (status() === 'sent') {
+      <div class="status success">✓ Sent! I'll get back to you soon.</div>
+    }
+    @if (status() === 'error') {
+      <div class="status error">✗ Something went wrong. Please try again.</div>
+    }
+
+    <div class="field">
+      <label for="cn">Name</label>
+      <input id="cn" type="text" placeholder="Your name"
+             [ngModel]="name()" (ngModelChange)="name.set($event)" required />
+    </div>
+    <div class="field">
+      <label for="ce">Email</label>
+      <input id="ce" type="email" placeholder="your@email.com"
+             [ngModel]="email()" (ngModelChange)="email.set($event)" required />
+    </div>
+    <div class="field">
+      <label for="cm">Message</label>
+      <textarea id="cm" rows="5" placeholder="Your message..."
+                [ngModel]="message()" (ngModelChange)="message.set($event)" required></textarea>
+    </div>
+    <button type="submit" [disabled]="status() === 'sending'" class="submit-btn">
+      {{ status() === 'sending' ? 'Sending…' : 'Send Message' }}
+    </button>
+  </form>
+</div>

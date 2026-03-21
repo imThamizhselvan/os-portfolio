@@ -1,0 +1,24 @@
+<div class="ub-window ub-anim-window-open"
+     [class.dragging]="dragging()"
+     [class.resizing]="resizing()"
+     [class.maximized]="win().maximized"
+     [class.focused]="focused()"
+     [style]="style"
+     (mousedown)="onFocus()">
+
+  <app-window-titlebar
+    [win]="win()"
+    [focused]="focused()"
+    (minimize)="onMinimize()"
+    (maximize)="onMaximize()"
+    (close)="onClose()"
+    (dragStart)="onDragStart($event)" />
+
+  <div class="ub-window-body">
+    <ng-container *ngComponentOutlet="appComponent()" />
+  </div>
+
+  @if (!win().maximized) {
+    <div class="ub-resize-handle" (mousedown)="onResizeStart($event)"></div>
+  }
+</div>

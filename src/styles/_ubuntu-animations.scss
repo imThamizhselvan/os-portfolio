@@ -1,0 +1,64 @@
+// ─── Ubuntu Animations ───────────────────────────────────────────────────────
+
+@keyframes ub-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes ub-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes ub-scale-in {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+@keyframes ub-slide-up {
+  from { transform: translateY(12px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes ub-slide-down {
+  from { transform: translateY(-8px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes ub-boot-dot {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.3; }
+  40%           { transform: scale(1);   opacity: 1; }
+}
+
+@keyframes ub-lock-blur-in {
+  from { filter: blur(20px); opacity: 0; }
+  to   { filter: blur(0px);  opacity: 1; }
+}
+
+@keyframes ub-window-open {
+  from { transform: scale(0.88) translateY(10px); opacity: 0; }
+  to   { transform: scale(1)    translateY(0);    opacity: 1; }
+}
+
+@keyframes ub-window-minimize {
+  to { transform: scale(0.5) translateY(80px); opacity: 0; }
+}
+
+@keyframes ub-pulse-ring {
+  0%   { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(233,84,32,0.4); }
+  70%  { transform: scale(1);    box-shadow: 0 0 0 16px rgba(233,84,32,0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(233,84,32,0); }
+}
+
+@keyframes ub-cof-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.ub-anim-fade-in   { animation: ub-fade-in   0.25s ease forwards; }
+.ub-anim-slide-up  { animation: ub-slide-up  0.2s  ease forwards; }
+.ub-anim-slide-down { animation: ub-slide-down 0.2s ease forwards; }
+.ub-anim-scale-in  { animation: ub-scale-in  0.22s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+.ub-anim-window-open {
+  animation: ub-window-open 0.2s cubic-bezier(0.34,1.56,0.64,1) forwards;
+}

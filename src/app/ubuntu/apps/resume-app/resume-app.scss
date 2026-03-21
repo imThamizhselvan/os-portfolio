@@ -1,0 +1,41 @@
+.resume-app {
+  padding: 24px; height: 100%; overflow-y: auto;
+  font-family: var(--ub-font); color: var(--ub-text);
+}
+
+.resume-header {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+  background: linear-gradient(135deg, #e95420, #f4a95a);
+  color: #fff; padding: 20px 24px; border-radius: 10px; margin-bottom: 20px;
+}
+
+.rh-name { font-size: 22px; font-weight: 700; }
+.rh-role { font-size: 13px; opacity: 0.85; margin: 4px 0; }
+.rh-contact { display: flex; gap: 8px; flex-wrap: wrap; font-size: 12px; opacity: 0.8; }
+
+.dl-btn {
+  padding: 8px 16px; background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.5); border-radius: 8px;
+  color: #fff; text-decoration: none; font-size: 13px; white-space: nowrap;
+  &:hover { background: rgba(255,255,255,0.3); }
+}
+
+.section { margin-bottom: 20px; }
+
+.exp-card {
+  border-left: 3px solid var(--ub-orange); padding-left: 14px; margin-bottom: 14px;
+}
+.exp-header {
+  display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;
+}
+.exp-role { font-size: 14px; font-weight: 600; }
+.exp-company { font-size: 12px; color: #666; }
+.exp-period { font-size: 12px; color: #888; white-space: nowrap; flex-shrink: 0; }
+.exp-bullets { margin: 0; padding-left: 16px; font-size: 13px; line-height: 1.7; color: #444; }
+
+.skills-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+.skill-col-h { font-size: 12px; font-weight: 600; color: #444; margin-bottom: 6px; }
+.skill-row { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+.s-name { font-size: 11px; width: 90px; flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.s-bar { flex: 1; height: 5px; background: #eee; border-radius: 3px; overflow: hidden; }
+.s-fill { height: 100%; background: var(--ub-orange); border-radius: 3px; }

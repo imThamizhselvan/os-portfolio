@@ -1,0 +1,63 @@
+.projects-app {
+  padding: 24px; height: 100%; overflow-y: auto;
+  font-family: var(--ub-font); color: var(--ub-text);
+  position: relative;
+}
+
+.projects-list { display: flex; flex-direction: column; gap: 14px; }
+
+.project-card {
+  border: 1px solid #e0e0e0; border-radius: 10px;
+  overflow: hidden; background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s;
+  &:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+}
+
+.card-shots {
+  display: flex; gap: 4px; background: #111; padding: 6px; overflow-x: auto;
+}
+.shot-thumb {
+  height: 90px; width: auto; border-radius: 4px; cursor: zoom-in; flex-shrink: 0;
+  transition: transform 0.15s;
+  &:hover { transform: scale(1.04); }
+}
+
+.card-content { padding: 12px 16px; display: flex; flex-direction: column; gap: 8px; }
+
+.card-top { display: flex; align-items: center; justify-content: space-between; }
+
+.card-title { font-size: 15px; font-weight: 600; margin: 0; }
+
+.card-link {
+  font-size: 12px; color: var(--ub-orange); text-decoration: none;
+  border: 1px solid var(--ub-orange); padding: 2px 8px; border-radius: 12px;
+  &:hover { background: var(--ub-orange); color: #fff; }
+}
+
+.card-desc { font-size: 13px; line-height: 1.6; color: #555; margin: 0; }
+
+.card-tech { display: flex; flex-wrap: wrap; gap: 5px; }
+
+.tech-tag {
+  display: flex; align-items: center; gap: 4px;
+  background: #f5f5f5; border: 1px solid #e0e0e0; border-radius: 12px;
+  padding: 2px 8px; font-size: 11px; color: #444;
+}
+.tech-logo { width: 12px; height: 12px; object-fit: contain; }
+
+// Lightbox
+.lightbox {
+  position: absolute; inset: 0; background: rgba(0,0,0,0.75);
+  display: flex; align-items: center; justify-content: center; z-index: 100;
+}
+.lb-box {
+  background: #fff; border-radius: 10px; overflow: hidden;
+  max-width: 90%; max-height: 90%; display: flex; flex-direction: column;
+}
+.lb-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 14px; background: #3c3b3b; color: #fff; font-size: 13px;
+  button { background: none; border: none; color: #fff; cursor: pointer; font-size: 14px; }
+}
+.lb-img { max-width: 100%; max-height: 520px; object-fit: contain; display: block; }

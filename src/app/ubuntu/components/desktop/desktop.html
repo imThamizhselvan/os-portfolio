@@ -1,0 +1,13 @@
+<div class="desktop" [style.background]="bgStyle">
+  <app-top-bar />
+  <app-window-manager />
+  <app-bottom-bar />
+
+  @if (ctxVisible()) {
+    <app-context-menu
+      [x]="ctxX()"
+      [y]="ctxY()"
+      [items]="ctxItems"
+      (action)="onContextAction($event)" />
+  }
+</div>

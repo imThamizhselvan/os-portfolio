@@ -1,0 +1,62 @@
+.lock-screen {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  animation: ub-fade-in 0.5s ease forwards;
+  transition: opacity 0.5s ease;
+
+  &.fading-out { opacity: 0; }
+}
+
+.lock-bg {
+  position: absolute; inset: 0;
+  background: var(--ub-wallpaper);
+  filter: blur(30px) brightness(0.6);
+  transform: scale(1.1);
+}
+
+.lock-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+.lock-content {
+  position: relative;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  animation: ub-slide-up 0.5s ease 0.2s both;
+}
+
+.lock-time {
+  font-size: 96px;
+  font-weight: 200;
+  color: #fff;
+  letter-spacing: -4px;
+  line-height: 1;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+.lock-date {
+  font-size: 22px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.5px;
+}
+
+.lock-cof {
+  margin-top: 20px;
+  animation: ub-pulse-ring 2.5s ease-in-out infinite;
+  border-radius: 50%;
+}
+
+.lock-user {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.9);
+  margin-top: 4px;
+}
+
+.lock-hint {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.3px;
+}

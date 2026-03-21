@@ -1,0 +1,66 @@
+.top-bar {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: var(--ub-panel-height);
+  background: var(--ub-panel-bg);
+  border-bottom: 1px solid var(--ub-panel-border);
+  display: flex; align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(12px);
+  color: var(--ub-panel-text);
+  font-family: var(--ub-font);
+  font-size: 13px;
+}
+
+.tb-left {
+  flex: 1;
+  display: flex; align-items: center; gap: 12px;
+  padding-left: 8px;
+  overflow: hidden;
+}
+
+.tb-activities {
+  background: none; border: none;
+  color: var(--ub-panel-text); font-family: var(--ub-font); font-size: 13px;
+  font-weight: 500; cursor: pointer; padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  &:hover { background: rgba(255,255,255,0.12); }
+}
+
+.tb-app-name {
+  font-size: 13px; font-weight: 400;
+  color: rgba(255,255,255,0.7);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.tb-center {
+  display: flex; align-items: center; gap: 6px;
+  position: absolute; left: 50%; transform: translateX(-50%);
+}
+
+.tb-time {
+  font-weight: 500; font-size: 13px;
+  color: rgba(255,255,255,0.95);
+}
+
+.tb-date {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+}
+
+.tb-right {
+  flex: 1; display: flex; align-items: center; justify-content: flex-end;
+  gap: 2px; padding-right: 8px;
+}
+
+.tb-tray-btn {
+  background: none; border: none;
+  color: rgba(255,255,255,0.8); cursor: pointer;
+  padding: 3px 6px; border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+  &:hover { background: rgba(255,255,255,0.12); }
+}
+
+.tb-power-wrap { position: relative; }

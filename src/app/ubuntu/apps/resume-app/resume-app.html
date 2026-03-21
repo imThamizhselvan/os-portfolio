@@ -1,0 +1,56 @@
+<div class="resume-app">
+  <!-- Header -->
+  <div class="resume-header">
+    <div class="rh-left">
+      <div class="rh-name">Thamil Selvan</div>
+      <div class="rh-role">Full-Stack Developer · Australia</div>
+      <div class="rh-contact">
+        <span>✉ hello&#64;imthamil.com</span>
+        <span>·</span>
+        <span>🌐 imthamil.com</span>
+        <span>·</span>
+        <span>🐙 github.com/tronictio</span>
+      </div>
+    </div>
+    <a href="assets/CV.pdf" download class="dl-btn">
+      ⬇ Download CV
+    </a>
+  </div>
+
+  <!-- Experience -->
+  <section class="section">
+    <h2 class="ub-section-title">Experience</h2>
+    @for (exp of experience; track exp.role) {
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">{{ exp.role }}</div>
+            <div class="exp-company">{{ exp.company }}</div>
+          </div>
+          <div class="exp-period">{{ exp.period }}</div>
+        </div>
+        <ul class="exp-bullets">
+          @for (pt of exp.points; track pt) { <li>{{ pt }}</li> }
+        </ul>
+      </div>
+    }
+  </section>
+
+  <!-- Skills Grid -->
+  <section class="section">
+    <h2 class="ub-section-title">Skills</h2>
+    <div class="skills-grid">
+      @for (cat of [['frontend','Frontend'],['mobile','Mobile'],['backend','Backend'],['ai','AI']] ; track cat[0]) {
+        <div class="skill-col">
+          <h3 class="skill-col-h">{{ cat[1] }}</h3>
+          @for (s of top($any(cat[0])); track s.name) {
+            <div class="skill-row">
+              <span class="s-name">{{ s.name }}</span>
+              <div class="s-bar"><div class="s-fill" [style.width.%]="s.level"></div></div>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </section>
+</div>

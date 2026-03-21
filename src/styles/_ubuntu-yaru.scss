@@ -1,0 +1,92 @@
+// ─── Ubuntu Yaru Design Tokens ───────────────────────────────────────────────
+
+:root {
+  // Font
+  --ub-font: 'Ubuntu', 'Cantarell', 'Noto Sans', sans-serif;
+  --ub-font-mono: 'Ubuntu Mono', 'Courier New', monospace;
+
+  // Brand
+  --ub-orange: #e95420;
+  --ub-orange-hover: #f16635;
+  --ub-orange-light: rgba(233,84,32,0.15);
+
+  // Panels
+  --ub-panel-bg: rgba(18, 18, 18, 0.96);
+  --ub-panel-height: 28px;
+  --ub-panel-border: rgba(255,255,255,0.08);
+  --ub-panel-text: rgba(255,255,255,0.9);
+
+  // Dock
+  --ub-dock-width: 60px;
+  --ub-dock-bg: rgba(30,30,30,0.85);
+  --ub-dock-border: rgba(255,255,255,0.07);
+  --ub-dock-icon: 44px;
+
+  // Windows
+  --ub-win-titlebar: #3c3b3b;
+  --ub-win-titlebar-unfocused: #4a4947;
+  --ub-win-bg: #faf9f8;
+  --ub-win-radius: 12px;
+  --ub-win-shadow: 0 12px 48px rgba(0,0,0,0.55), 0 2px 8px rgba(0,0,0,0.3);
+  --ub-win-shadow-unfocused: 0 6px 24px rgba(0,0,0,0.35);
+
+  // Traffic-light buttons
+  --ub-btn-close: #ed655a;
+  --ub-btn-min:   #f1bf4e;
+  --ub-btn-max:   #61c554;
+  --ub-btn-close-active: #e84030;
+  --ub-btn-min-active:   #e0a820;
+  --ub-btn-max-active:   #3ea83a;
+
+  // Wallpaper gradient (Ubuntu Jammy jellyfish inspired)
+  --ub-wallpaper: linear-gradient(
+    135deg,
+    #300a24 0%,
+    #4a1042 15%,
+    #5d0e41 30%,
+    #c0392b 55%,
+    #e95420 75%,
+    #f4a95a 100%
+  );
+
+  // Text
+  --ub-text: #2c2c2c;
+  --ub-text-dim: #6c6c6c;
+  --ub-link: #0074d9;
+}
+
+// ─── Reset ───────────────────────────────────────────────────────────────────
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  font-family: var(--ub-font);
+  font-size: 13px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+// ─── Scrollbar ───────────────────────────────────────────────────────────────
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.35); background-clip: padding-box; }
+
+// ─── Utility ─────────────────────────────────────────────────────────────────
+
+.ub-section-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ub-text);
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--ub-orange);
+}

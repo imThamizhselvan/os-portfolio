@@ -1,0 +1,20 @@
+<div class="titlebar" [class.focused]="focused()" (mousedown)="dragStart.emit($event)">
+  <!-- Traffic light buttons (left) -->
+  <div class="tb-buttons" (mousedown)="$event.stopPropagation()">
+    <button class="tb-btn tb-close" title="Close" (click)="close.emit()">
+      <span class="tb-icon">✕</span>
+    </button>
+    <button class="tb-btn tb-min" title="Minimize" (click)="minimize.emit()">
+      <span class="tb-icon">─</span>
+    </button>
+    <button class="tb-btn tb-max" title="{{ win().maximized ? 'Restore' : 'Maximize' }}" (click)="maximize.emit()">
+      <span class="tb-icon">{{ win().maximized ? '⊡' : '⊞' }}</span>
+    </button>
+  </div>
+
+  <!-- Title -->
+  <div class="tb-title">{{ win().title }}</div>
+
+  <!-- Right spacer (mirror of buttons for centering) -->
+  <div class="tb-spacer"></div>
+</div>

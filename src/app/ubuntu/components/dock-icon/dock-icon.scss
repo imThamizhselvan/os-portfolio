@@ -61,10 +61,19 @@
   }
 }
 
-.dock-dot {
-  width: 4px; height: 4px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.7);
+.dock-indicator {
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  border-radius: 0 2px 2px 0;
+  background: rgba(255, 255, 255, 0.75);
+  height: 14px;
+  transition: height 0.15s, background 0.15s;
 
-  .active & { background: var(--ub-orange); }
+  .active & {
+    height: 22px;
+    background: var(--ub-orange, #e95420);
+  }
 }

@@ -5,14 +5,14 @@
      (mouseleave)="hovered.set(false)"
      (click)="open.emit()">
 
+  @if (hasWindow()) {
+    <div class="dock-indicator"></div>
+  }
+
   @if (hovered()) {
     <div class="dock-tooltip ub-anim-slide-down">{{ label() }}</div>
   }
 
   <div class="dock-icon-bg" [class.hovered]="hovered()" [innerHTML]="svgIcon()">
   </div>
-
-  @if (hasWindow()) {
-    <div class="dock-dot"></div>
-  }
 </div>
